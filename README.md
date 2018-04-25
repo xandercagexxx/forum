@@ -1,5 +1,4 @@
 # forum
-Forum d'
 
 Etapes à respecter:
 
@@ -74,7 +73,7 @@ V3.0 :
 
     gestion du responsive
 
-    connexion en double authentification 
+    connexion en double authentification
 
 
 
