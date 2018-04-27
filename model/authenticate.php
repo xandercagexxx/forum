@@ -1,30 +1,6 @@
-<?php
 
-session_start();
-//$connecte=Utilisateur::isConnected();
-
-if(isset($_POST['user']) && isset($_POST['password'])){
-  $log=$_POST['user'];
-  $mdp=$_POST['password'];
-  //verif user exist
-  //si oui require("vue/islog.php"); //a créer même page que accueil.php(login.php) mais remplacer les deux boutons se connecter par Bienvenue:$login
-  //sinon require("vue/accueil.php");
-  require("view/login.php"); //prévoir le bon liens
- }
-else if(!isset($_GET['page'])){
-  //require("vue/accueil.php");
-  echo "tata";
-}
-else if(isset($_GET['page']) && $_GET['page']=="register"){
-  require("vue/register.php"); //prévoir le bon liens
-}
-}
-else{
-  echo "titi";
-  //require("vue/accueil.php");
-}
-?>
-
+<html>
+  <head>
  <!-- Modal1 -->
  <div id="myModal" class="modal col-md-4 col-md-offset-4">
    <div class="modal-content">
@@ -63,3 +39,32 @@ else{
      </div>
    </div>
  </div>
+
+ <?php
+
+ session_start();
+ //$connecte=Utilisateur::isConnected();
+
+ if(isset($_POST['user']) && isset($_POST['password'])){
+   $log=$_POST['user'];
+   $mdp=$_POST['password'];
+   //verif user exist
+   //si oui require("vue/islog.php"); //a créer même page que accueil.php(login.php) mais remplacer les deux boutons se connecter par Bienvenue:$login
+   //sinon require("vue/accueil.php");
+   require("view/login.php"); //prévoir le bon liens
+  }
+ else if(!isset($_GET['page'])){
+   //require("vue/accueil.php");
+   echo "tata";
+ }
+ else if(isset($_GET['page']) && $_GET['page']=="register"){
+   require("vue/register.php"); //prévoir le bon liens
+ }
+ }
+ else{
+   echo "titi";
+   //require("vue/accueil.php");
+ }
+ ?>
+</body>
+</html>
