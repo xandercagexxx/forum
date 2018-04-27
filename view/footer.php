@@ -1,1 +1,1 @@
-<footer>  Version 0.1  <a href="index.php?controller=printcgu">>>CGU<<</a></footer>
+<footer>  Version 0.1  <a href="index.php?controller=maincontroller&action=displaycgu">>>CGU<<</a></footer>
