@@ -68,7 +68,7 @@ Class maincontroller {
       fwrite($threadfile,htmlentities($_POST['textarea']));
       //plus tard il faudra vérifier l'authentification de l'user pour accéder a cette fonction
       closethreadfile($threadfile);
-      echo "<h1>Fichier Creer</h1>"
+      echo "<h1>Fichier Creer</h1>";
       require_once("view/footer.php");
     }
     function displaycgu($nb){

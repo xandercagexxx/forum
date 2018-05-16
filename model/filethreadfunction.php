@@ -78,6 +78,6 @@ function get1threadfromfile($threadfile,$nb){ #initialisé nb! et l'utiliser
 }
 function writethread($threadfile){
   #Ecrit une nouvelle ligne dans le fichier
-  
+  #PAS BESOIN pour l'instant
 }
  ?>
