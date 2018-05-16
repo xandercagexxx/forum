@@ -50,11 +50,26 @@ Class maincontroller {
         //addthread.php se sert des fonctions dans openthreadfile.php pour ouvrir le fichier d'articles
         //Il ecrira le nouvelle article dedans et fermera le fichier
         //On écris ce qu'on a a écrire(modifier au besoin le nom des clef du tableau post)
-        fwrite($threadfile,(htmlentities($_POST['titre']).", By  ".htmlentities($_POST['pseudo'])));
-        fwrite($threadfile,htmlentities($_POST['corpdumessage']));
+        #fwrite($threadfile,(htmlentities($_POST['titre']).", By  ".htmlentities($_POST['pseudo'])));
+        #fwrite($threadfile,htmlentities($_POST['corpdumessage']));
         //plus tard il faudra vérifier l'authentification de l'user pour accéder a cette fonction
         closethreadfile($threadfile);
         require_once("view/footer.php");
+    }
+    function createthreads($nb){
+      require_once("model/filethreadfunction.php");
+      $threadfile=openthreadfileappend();
+      //afficher un formulaire (code dans formcreationthread.php dans le rep view)
+      //le formulaire envoie les données à une fonction d'écriture présente dans addthread.php (vu que le code de addthread.php est chargé dans le controlleur il suffit de l'envoyer sur lui même)
+      //addthread.php se sert des fonctions dans openthreadfile.php pour ouvrir le fichier d'articles
+      //Il ecrira le nouvelle article dedans et fermera le fichier
+      //On écris ce qu'on a a écrire(modifier au besoin le nom des clef du tableau post)
+      fwrite($threadfile,(htmlentities($_POST['title']).", By  ".htmlentities($_POST['username'])));
+      fwrite($threadfile,htmlentities($_POST['textarea']));
+      //plus tard il faudra vérifier l'authentification de l'user pour accéder a cette fonction
+      closethreadfile($threadfile);
+      echo "<h1>Fichier Creer</h1>"
+      require_once("view/footer.php");
     }
     function displaycgu($nb){
         require_once("view/cgu.php");
