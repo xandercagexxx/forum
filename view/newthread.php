@@ -10,7 +10,7 @@
 
 
   <div>
-  <form class="username" action="index.php?controller=maincontroller&action=addthreads" method="post">
+  <form class="username" action="index.php?controller=maincontroller&action=createthreads" method="post">
     <br/>
     Entrez le titre du sujet : <input type="text" name="title" value="" placeholder="Titre du sujet" required>
     <br/>
@@ -18,7 +18,7 @@
     <br/>
     Description du sujet :
     <br/>
-    <textarea rows="10" cols="75" maxlength="1000" wrap="hard" required placeholder="Description du sujet"></textarea>
+    <textarea name="textarea" rows="10" cols="75" maxlength="1000" wrap="hard" required placeholder="Description du sujet"></textarea>
     <br/>
     <input type="submit" name="Validate" value="Valider">
     <input type="reset" name="Delete" value="Effacer">
