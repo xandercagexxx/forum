@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Nouvelle discussion</title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8" />
+  <title>Discussion</title>
+  <?php require_once("header.php");?>
+  <li>Texte à mettre en forme</li>
+  <!--
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
+  <input type="submit">
+  -->
 
-  </body>
+</head>
+<body>
+  <textarea>test editeur</textarea>
+</body>
 </html>
