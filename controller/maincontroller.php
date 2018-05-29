@@ -17,14 +17,13 @@ Class maincontroller {
         #on ouvre le fichier contenant les discution
         $threadfile=openthreadfileread();
         #$threadfile est désormais un pointeur de fichier sur le fichier des discussion
-        get5threadfromfile($threadfile,0);
+        get5threadfromfile($threadfile,$nb);
         //Définire un tableau
         //Utiliser les méthodes de openthreadfile.php pour remplire le tableau
         //Déclarer une variable globale int =0
         //afficher les 5 éléments du tableau égaux et supérieurs a la var global
         closethreadfile($threadfile);
-	echo "Page $page";
-	affichearrow($page,$threadfile);
+	    affichearrow($page,$threadfile);
         require_once("view/footer.php");
     }
     function focusonthread($nb){

@@ -1,1 +1,1 @@
-    <h2>"""Site en cours de construction"""</h2>
+    <h2>"""Site en construction depuis 1986. (Style imposé par Richard Stallman)"""</h2>

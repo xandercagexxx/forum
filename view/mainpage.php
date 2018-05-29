@@ -16,7 +16,7 @@
 <p>3 - il faut 1 liens vers la discussion instantanée</p>
 <p>3 - il faut 1 liens vers les CGU en bas de page</p> -->
 
-<h2>Liste des sujets existant</h2>
+<h2>Liste des fonctionnalités existantes</h2>
 <h4><a href="index.php?controller=maincontroller&action=showthreads">Forum</a></h4>
 
 <h4><a href="index.php?controller=maincontroller&action=addthreads">Ajouter un sujet</a></h4>
