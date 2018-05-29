@@ -83,10 +83,9 @@ Class maincontroller {
       //ajout d'une ligne avec l'identifiant du commentaire
       //sauvegarder le fichier avec appui sur save_comment
       require_once("model/filethreadfunction.php");
-      $threadfile=openthreadfileappend();
-
+      $threadfile=openthreadcommentfileappend();
       get1threadfromfile($threadfile,$nb);
-      require_once("view/addcommentinthreads.php");
+      require_once("view/addcommentinthread.php");
 
       closethreadfile($threadfile);
 

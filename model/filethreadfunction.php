@@ -12,19 +12,6 @@ function openthreadfileread(){
       }
 }
 
-function openthreadcommentfileread(){
-      if(file_exists("view/threadlist.txt"))
-      {
-         # echo "</br>Ouverture de fichier...</br>";
-          $threadfile=fopen("view/threadcommentlist.txt","r");
-          return($threadfile);
-      }
-      else
-      {
-        echo "Error threadcommentfile not found";
-      }
-}
-
 function openthreadfileappend(){
     //On ouvre le fichier de blog en lecture/ecriture, avec la tete de lecture en fin de fichier
     $threadfile=fopen("view/threadlist.txt","a+");
@@ -32,11 +19,6 @@ function openthreadfileappend(){
     return($threadfile);
 }
 
-function openthreadcommentfileappend(){
-    //On ouvre le fichier de blog en lecture/ecriture, avec la tete de lecture en fin de fichier
-    $threadfile=fopen("view/threadcommentlist.txt","a+");
-    echo "</br>File open";
-    return($threadfile);
 }
 function closethreadfile($threadfile){
       if(isset($threadfile))
