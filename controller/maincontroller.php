@@ -74,6 +74,20 @@ Class maincontroller {
       echo "<h1>Fichier Creer</h1>";
       require_once("view/footer.php");
     }
+    function add_comment_in_threads($nb){
+      //Etape
+      //ouverture d'une page pour ajouter un commentaire
+      //ouverture du fichier de commentaire
+      //ajout d'une ligne avec l'identifiant du commentaire
+      //sauvegarder le fichier avec appui sur save_comment
+      $threadfile=openthreadfileappend();
+      require_once("model/filethreadfunction.php");
+      get1threadfromfile($threadfile,$nb);
+      require_once("view/add_comment_in_threads.php");
+
+      closethreadfile($threadfile);
+
+    }
     function displaycgu($nb){
         require_once("view/cgu.php");
     }
