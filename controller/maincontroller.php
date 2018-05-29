@@ -41,6 +41,8 @@ Class maincontroller {
         //Déclarer une variable globale int =0
         //afficher les 5 éléments du tableau égaux et supérieurs a la var global
         closethreadfile($threadfile);
+        echo "<a href='index.php?controller=maincontroller&action=addcommentinthreads&nb=$nb'>Ajouter un commentaire</a";
+        echo "</br>";
         require_once("view/footer.php");
     }
     function addthreads($nb){
@@ -74,16 +76,18 @@ Class maincontroller {
       echo "<h1>Fichier Creer</h1>";
       require_once("view/footer.php");
     }
-    function add_comment_in_threads($nb){
+
+    function addcommentinthreads($nb){
       //Etape
       //ouverture d'une page pour ajouter un commentaire
       //ouverture du fichier de commentaire
       //ajout d'une ligne avec l'identifiant du commentaire
       //sauvegarder le fichier avec appui sur save_comment
-      $threadfile=openthreadfileappend();
       require_once("model/filethreadfunction.php");
+      $threadfile=openthreadfileappend();
+
       get1threadfromfile($threadfile,$nb);
-      require_once("view/add_comment_in_threads.php");
+      require_once("view/addcommentinthreads.php");
 
       closethreadfile($threadfile);
 

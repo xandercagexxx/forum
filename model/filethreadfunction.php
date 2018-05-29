@@ -25,8 +25,6 @@ function openthreadcommentfileread(){
       }
 }
 
-
-
 function openthreadfileappend(){
     //On ouvre le fichier de blog en lecture/ecriture, avec la tete de lecture en fin de fichier
     $threadfile=fopen("view/threadlist.txt","a+");

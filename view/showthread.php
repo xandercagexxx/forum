@@ -7,5 +7,7 @@
   <body>
       <?php require_once("header.php");?>
       <h1>Espace de blog:</h1>
+    </br>
+  </br>
   </body>
 </html>
