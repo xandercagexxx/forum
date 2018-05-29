@@ -13,7 +13,7 @@ function openthreadfileread(){
 }
 
 function openthreadcommentfileread(){
-      if(file_exists("view/threadlist.txt"))
+      if(file_exists("view/threadcommentlist.txt"))
       {
          # echo "</br>Ouverture de fichier...</br>";
           $threadfile=fopen("view/threadcommentlist.txt","r");

@@ -10,7 +10,7 @@
 
 
   <div>
-  <form class="username" action="index.php?controller=maincontroller&action=createthreads" method="post">
+  <form class="username" action="index.php?controller=maincontroller&action=addcommentinthreads" method="post">
     <br/>
     Entrez votre nom d'utilisateur : <input type="text" name="username" value="" placeholder="Nom d'utilisateur" required>
     <br/>

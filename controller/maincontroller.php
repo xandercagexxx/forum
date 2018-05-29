@@ -86,10 +86,12 @@ Class maincontroller {
       $threadfile=openthreadcommentfileappend();
       get1threadfromfile($threadfile,$nb);
       require_once("view/addcommentinthread.php");
-
+      fwrite($threadfile,replacetitlename(htmlentities($_POST['username']))."</br>\r\n");
+      fwrite($threadfile,replacecarierreturntextarea(htmlentities($_POST['textarea']))."</br>\r\n");
       closethreadfile($threadfile);
-
+      require_once("view/footer.php");
     }
+
     function displaycgu($nb){
         require_once("view/cgu.php");
     }
