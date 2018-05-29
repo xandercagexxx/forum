@@ -19,7 +19,6 @@ function openthreadfileappend(){
     return($threadfile);
 }
 
-}
 function closethreadfile($threadfile){
       if(isset($threadfile))
       {
@@ -48,10 +47,11 @@ if ($threadfile) {
         $i++;
         }
 	$i=1;
-    while ((($buffer = fgets($threadfile, 4096)) !== false)&& $i<=5) {
+    while ((($buffer = fgets($threadfile, 4096)) !== false)&& $y<10) {
         if(($y%2)==0)
         {
-          echo "<a href='index.php?controller=maincontroller&action=focusonthread&nb=$i'>$buffer</a>";
+          $u=$i+$nb;
+          echo "<a href='index.php?controller=maincontroller&action=focusonthread&nb=$u'>$buffer</a>";
           $i++;
           $y++;
         }
@@ -88,13 +88,16 @@ function get1threadfromfile($threadfile,$nb){ #initialisé nb! et l'utiliser
 }
 function affichearrow($nb,$threadfile){
 	$page=($nb/5)+1;
-	#if($a>=5)
-	#{
+	if($page!=1)
+	{
 	  $a=$nb-5;
           echo "</br></br><a href='index.php?controller=maincontroller&action=showthreads&nb=0'>Première page</a>";
-    #    }
+    }
+    else{
+        echo "</br></br>";
+    }
 	echo "    Page $page    ";
-	if($a<countline($threadfile))
+	if($nb<(countline($threadfile)/3))
 	{
 	$a=$nb+5;
 	 echo "<a href='index.php?controller=maincontroller&action=showthreads&nb=$a'>Page suivante!</a>";

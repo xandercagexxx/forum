@@ -23,7 +23,7 @@ Class maincontroller {
         //Déclarer une variable globale int =0
         //afficher les 5 éléments du tableau égaux et supérieurs a la var global
         closethreadfile($threadfile);
-	    affichearrow($page,$threadfile);
+	    affichearrow($nb,$threadfile);
         require_once("view/footer.php");
     }
     function focusonthread($nb){
