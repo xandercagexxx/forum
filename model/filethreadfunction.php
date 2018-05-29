@@ -28,13 +28,13 @@ function openthreadcommentfileread(){
 function openthreadcommentfileappend(){
     //On ouvre le fichier de blog en lecture/ecriture, avec la tete de lecture en fin de fichier
     $threadfile=fopen("view/threadcomment.txt","a+");
-    echo "</br>File open";
+    #echo "</br>File open";
     return($threadfile);
 }
 function openthreadfileappend(){
     //On ouvre le fichier de blog en lecture/ecriture, avec la tete de lecture en fin de fichier
     $threadfile=fopen("view/threadlist.txt","a+");
-    echo "</br>File open";
+    #echo "</br>File open";
     return($threadfile);
 }
 
