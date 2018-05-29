@@ -15,6 +15,11 @@
   } else {
     $nb = 0;
   }
+  if (isset($_GET["page"])) {
+    $page = $_GET["page"];
+  } else {
+    $page = 0;
+  }
   $cheminDuController = "controller/".$controller.'.php';
 
   if (file_exists($cheminDuController)){
@@ -29,7 +34,7 @@
     if (class_exists($controllerclassname)) {
       $controllerclass = new $controllerclassname();
       if (method_exists($controllerclass,$actiontodo)) {
-        $controllerclass->$actiontodo($nb);
+        $controllerclass->$actiontodo($nb,$page);
       } else {
          // die("<a>Woaw je ne sais pas ce que vous chercher, mais ça n'existe pas</a>");
         die("<b>### Erreur : la methode '$actiontodo' du controleur '$controllerclassname' du fichier '$controller_file_name' n'existe pas</b>

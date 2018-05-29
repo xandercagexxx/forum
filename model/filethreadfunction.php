@@ -2,7 +2,7 @@
 function openthreadfileread(){
       if(file_exists("view/threadlist.txt"))
       {
-          echo "</br>Ouverture de fichier...</br>";
+         # echo "</br>Ouverture de fichier...</br>";
           $threadfile=fopen("view/threadlist.txt","r");
           return($threadfile);
       }
@@ -24,7 +24,7 @@ function closethreadfile($threadfile){
       {
           //On ferme le fichier
           fclose($threadfile);
-          echo "</br>Fermeture de fichier...</br>";
+          #echo "</br>Fermeture de fichier...</br>";
       }
       else
       {
@@ -76,8 +76,37 @@ function get1threadfromfile($threadfile,$nb){ #initialisé nb! et l'utiliser
             echo $data;
     }
 }
-function writethread($threadfile){
+function affichearrow($page,$threadfile){
+	  $a=$page;
+	if($a>0)
+	{
+	  $a-=1;
+          echo "<a href='index.php?controller=maincontroller&action=showthreads&page=$a'>page précédente</a>";
+        } 
+	if($a<countline($threadfile))
+	{
+	$a+=1;
+	 echo "<a href='index.php?controller=maincontroller&action=showthreads&page=$a'>Page suivante!</a>";
+	}
+}
+
+function countline($threadfile){
   #Ecrit une nouvelle ligne dans le fichier
   #PAS BESOIN pour l'instant
+if ($threadfile) {
+    $i=0;
+    fseek($threadfile, 0);
+    while (($buffer = fgets($threadfile, 4096)) !== false) {
+	$i+=1;
+    }
+    if (feof($threadfile)) {
+        return $i;
+    }
+    else{
+	echo "ERROR LINE COUNT";
+	echo $i;
+	}
+    fclose($threadfile);
+}
 }
  ?>

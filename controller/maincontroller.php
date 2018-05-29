@@ -2,14 +2,14 @@
 //require_once("view/mainpage.php");
 Class maincontroller {
 
-    function index($nb){
+    function index($nb,$page){
         require_once("view/mainpage.php");
     }
     /* Ne sert a rien on appel la mainpage par défault, je le laisse si on décide de changer l'action par défault
     function displaymainpage(){
         require_once("view/mainpage.php");
     }*/
-    function showthreads($nb){
+    function showthreads($nb,$page){
         #On inclue la page
         require_once("view/showthread.php");
         #On inclue le model qui contient les fonctions php
@@ -23,6 +23,8 @@ Class maincontroller {
         //Déclarer une variable globale int =0
         //afficher les 5 éléments du tableau égaux et supérieurs a la var global
         closethreadfile($threadfile);
+	echo "Page $page";
+	affichearrow($page,$threadfile);
         require_once("view/footer.php");
     }
     function focusonthread($nb){
